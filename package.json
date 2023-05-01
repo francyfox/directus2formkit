@@ -1,0 +1,22 @@
+{
+  "name": "directus2formkit",
+  "private": true,
+  "version": "1.0.0",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "formkit-generate": "./dist/main.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.0.2",
+    "@types/node": "^18.16.3",
+    "rollup-plugin-typescript-paths": "^1.4.0",
+    "tslib": "^2.5.0"
+  }
+}
