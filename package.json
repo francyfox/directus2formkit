@@ -1,5 +1,5 @@
 {
-  "name": "directus2formkit",
+  "name": "@francyfox/directus2formkit",
   "description": "Transform directus fields schema from api to formkit json file",
   "author": "hellisart <7info7web@gmail.com>",
   "private": true,
