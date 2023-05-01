@@ -1,5 +1,7 @@
 # DirectUs2FormKit Schema Transform (not ready)
 
+Transform directus fields schema from api to formkit json file
+
 - Type: module
 - Directus =< 9.25.0 
 - Formkit Beta 16
@@ -14,7 +16,7 @@ Use npm cli command `pnpm run formkit-generate`
 
 
 or run file from dist `node ./dist/index.js`. If you globally 
-installed `bun` use `pnpm run dev`
+installed `bun` run `index.ts` from src
 
 
 ### Test
