@@ -10,7 +10,6 @@
   },
   "scripts": {
     "build": "tsc",
-    "dev": "bun ./src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {},

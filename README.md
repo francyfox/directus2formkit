@@ -19,4 +19,10 @@ installed `bun` use `pnpm run dev`
 
 ### Test
 
-Run command `pnpm run `
+Run command `pnpm run test`
+
+
+### TODO
+
+- replace to formkit icons
+- i18n

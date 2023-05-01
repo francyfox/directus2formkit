@@ -9,9 +9,9 @@ export const FormkitElement = (el: IFormKitElement): FormKitElementBase | null =
     label: (placeholder === undefined) ? el.field.charAt(0).toUpperCase() + el.field.slice(1) : placeholder
   }
 
-  const key = Object.keys(InterfaceTranslate).find((i) => i === el.meta.interface)
+  const key = [...InterfaceTranslate.keys()].find((i) => i === el.meta.interface)
 
-  if (key && InterfaceTranslate.get(key) !== undefined) {
+  if (key) {
     // @ts-ignore
     output.$formkit = InterfaceTranslate.get(key)
   } else {

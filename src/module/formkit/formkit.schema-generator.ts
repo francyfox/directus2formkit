@@ -104,18 +104,20 @@ export default class FormkitSchemaGenerator {
       const filename = `${config.SCHEMA_EXPORT_DIR}/schema.${schema}.json`
       const dirname = path.dirname(filename);
 
-      if (await access(dirname, constants.F_OK) !== null) {
+      try {
+        await access(dirname, constants.F_OK)
+      } catch (e) {
         await mkdir(dirname, { recursive: true })
       }
 
       try {
         await writeFile(filename, JSON.stringify(collectionList[schema], null, 2))
+        console.log(`[OK] - ${schema}`)
       } catch (e) {
         throw new Error('Cant write file')
       }
-
-      return true
-
     }
+
+    return true
   }
 }
