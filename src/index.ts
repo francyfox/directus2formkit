@@ -5,7 +5,12 @@ import { config } from "./const";
 
 async function execute() {
   const generator = new FormkitSchemaGenerator(config.TRANSFORM_SCHEMA_LIST);
-  await generator.saveFile()
+  const isFine = await generator.saveFile()
+
+  if (isFine) {
+    console.log('Schema successfully generated')
+  }
 }
+
 
 execute()

@@ -108,7 +108,14 @@ export default class FormkitSchemaGenerator {
         await mkdir(dirname, { recursive: true })
       }
 
-      await writeFile(filename, JSON.stringify(collectionList[schema], null, 2))
+      try {
+        await writeFile(filename, JSON.stringify(collectionList[schema], null, 2))
+      } catch (e) {
+        throw new Error('Cant write file')
+      }
+
+      return true
+
     }
   }
 }
