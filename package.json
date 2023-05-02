@@ -2,7 +2,7 @@
   "name": "@francyfox/directus2formkit",
   "description": "Transform directus fields schema from api to formkit json file",
   "author": "hellisart <7info7web@gmail.com>",
-  "private": true,
+  "private": false,
   "version": "1.0.0",
   "license": "MIT",
   "repository": {
@@ -10,7 +10,7 @@
     "url": "https://github.com/francyfox/directus2formkit.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "keywords": [
     "directus",
@@ -20,18 +20,18 @@
     "dist"
   ],
   "bin": {
-    "formkit-generate": "./dist/main.js"
+    "formkit-generate": "./dist/cli.js"
   },
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {},
   "devDependencies": {
     "@types/node": "^18.16.3",
+    "dotenv": "^16.0.3",
+    "mri": "^1.2.0",
     "rollup-plugin-typescript-paths": "^1.4.0",
     "tslib": "^2.5.0",
-    "typescript": "^5.0.2",
-    "dotenv": "^16.0.3"
+    "typescript": "^5.0.2"
   }
 }

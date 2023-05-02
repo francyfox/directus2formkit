@@ -8,7 +8,7 @@ async function execute() {
   const isFine = await generator.saveFile()
 
   if (isFine) {
-    console.log('Schema successfully generated')
+    console.log(`Schema successfully generated to ${config.SCHEMA_EXPORT_DIR}`)
   }
 }
 

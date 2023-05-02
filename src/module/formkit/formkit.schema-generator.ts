@@ -16,6 +16,17 @@ export default class FormkitSchemaGenerator {
   ]
   constructor(collections: string[]) {
     this.collections = collections
+    this.isFilled()
+  }
+
+  isFilled() {
+    const authInfoFilled = config.ADMIN_EMAIL !== '' && config.ADMIN_PASSWORD !== ''
+    const configJSON = JSON.stringify(config, null, 4)
+    if (!authInfoFilled) {
+      throw new Error(`Required env vars is empty (ADMIN_EMAIL, ADMIN_PASSWORD) \t ${configJSON}`)
+    } else if (this.collections.length === 0) {
+      throw new Error(`Collection names TRANSFORM_SCHEMA_LIST is empty \t ${configJSON}`)
+    }
   }
 
   async token(): Promise<string> {
@@ -30,16 +41,26 @@ export default class FormkitSchemaGenerator {
       throw new Error('Connection refused. Directus offline')
     }
 
+    try {
+
+    } catch (e) {
+
+    }
     const response = await fetch(`${config.DIRECTUS_HOST}/auth/login`, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        email: '7info7web@gmail.com',
-        password: '123'
+        email: config.ADMIN_EMAIL,
+        password: config.ADMIN_PASSWORD
       })
     })
+
+    if (response.status !== 200) {
+      console.log(response)
+      throw new Error(`Auth error`)
+    }
 
     const { data } = await response.json()
 
